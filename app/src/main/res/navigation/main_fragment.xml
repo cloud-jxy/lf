@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.jocker.jlife.ui.main.MovieListFragment"
+        android:label="@string/main_label_fg"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_inTheaterDetailFragment"
+            app:destination="@id/inTheaterDetailFragment"
+            app:enterAnim="@anim/anim_left_in"
+            app:exitAnim="@anim/anim_left_out"
+            app:popEnterAnim="@anim/anim_left_in_pop"
+            app:popExitAnim="@anim/anim_left_out_pop"/>
+    </fragment>
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.jocker.jlife.ui.top250.FirstFragment"
+        android:label="@string/first_label_fg"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.jocker.jlife.SecondFragment"
+        android:label="@string/second_label_fg"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/inTheaterDetailFragment"
+        android:name="com.jocker.jlife.ui.detail.InTheaterDetailFragment"
+        android:label="fragment_in_theater_detail"
+        tools:layout="@layout/fragment_in_theater_detail" >
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:type="integer" />
+    </fragment>
+</navigation>
